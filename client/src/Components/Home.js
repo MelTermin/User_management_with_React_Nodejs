@@ -59,7 +59,7 @@ function Home() {
                     </button>
                   </Link>
                   <button className="btn btn-delete" onClick= {()=>onDeleteUser(item.id)} >Delete</button>
-                  <Link to= {`/view/${item.id}`}>
+                  <Link to= {`/user/${item.id}`}>
                     <button className="btn btn-view">
                       View
                     </button>

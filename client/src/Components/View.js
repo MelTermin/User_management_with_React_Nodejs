@@ -1,15 +1,15 @@
 import React,{useState,useEffect} from 'react'
-import {useParams,Link} from "react-router-dom"
+import {useParams} from "react-router-dom"
 import axios from 'axios'
 
 function View() {
-  const [user,setUser]=useState("")
+  const [userDetail,setUserDetail]=useState([]);
   const {id}=useParams();
   
 
   useEffect(() => {
     if(id) {
-      getSingleUser();
+      getSingleUser(id);
     }
 
   },[id])
@@ -19,14 +19,29 @@ function View() {
     axios.get(`http://localhost:5004/user/${id}`)
   .then((response) => {
     console.log(response.data);
-   
+    setUserDetail(response.data)
+    
   })
    
   }
+
+  console.log(userDetail)
   return (
     <div>
     <h1>View of a User</h1>
-      <p>User ID: {id}</p>
+    {
+        userDetail.map((item) => {
+          return (//dont forget to return it Melissa!!//
+          <div  key= {item.id} className="results">
+            <p>ID :{item.id}</p>
+            <p>Fullname{item.fullname}</p>
+            <p>EMAIL: {item.email}</p>
+            <p>PHONE: {item.phone}</p>
+          
+          </div>)
+        })
+      }
+      
     
     </div>
   )

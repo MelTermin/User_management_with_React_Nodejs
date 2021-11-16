@@ -19,7 +19,7 @@ function App() {
           <Route exact path="/"  component={Home} />
           <Route exact path={["/add", "/update/:id"]} component={AddUser} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/view/:id" component={View} />
+          <Route exact path="/user/:id" component={View} />
         </Switch>
       
         
