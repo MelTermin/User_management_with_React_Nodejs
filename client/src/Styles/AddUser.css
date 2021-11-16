@@ -1,0 +1,30 @@
+.add-user-wrapper {
+  border: 2px solid red;
+  height: 100vh;
+ }
+ 
+ form {
+   border: 2px solid green;
+   width: 500px;
+   margin: 100px 600px;
+   text-align: center;
+   /* padding: 100px 850px; */
+ }
+ 
+ form label {
+   border: 2px solid salmon;
+   display: flex;
+   justify-content: center;
+   margin: 15px 0px;
+ }
+ 
+ form input {
+   width: 250px;
+   height: 30px;
+ }
+ 
+ 
+ form .add-user-btn {
+   display: block;
+   margin: 15px 0px;
+ }
